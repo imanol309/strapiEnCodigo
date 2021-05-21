@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publicaciones",
+  "info": {
+    "name": "Publicaciones",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string"
+    },
+    "Creador": {
+      "type": "string"
+    },
+    "Contenido": {
+      "type": "richtext"
+    },
+    "Imagenes": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "Video": {
+      "model": "videos"
+    }
+  }
+}
